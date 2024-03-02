@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class=" text-right">
+            <a routerLink="/register" class="btn btn-sm btn-success">Add item</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sr No</th>
+                        <th>item ID</th>
+                        <th>Job-Title</th>
+                        <th>Contact</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                        <th>DOJ</th>
+                        <th>DOB</th>
+                        <th>Gender</th>
+                        <th>Email</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Postal Code</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of employeeArray; let sr=index">
+                        <td>{{ sr+1 }}</td>
+                        <td>{{ item.employeeId }}</td>
+                        <td>{{ item.jobtitle}}</td>
+                        <td>{{ item.contact }}</td>
+                        <td>{{ item.department }}</td>
+                        <td>{{ item.salary }}</td>
+                        <td>{{ item.doj }}</td>
+                        <td>{{ item.dob }}</td>
+                        <td>{{ item.gender }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>{{ item.city }}</td>
+                        <td>{{ item.state }}</td>
+                        <td>{{ item.zip }}</td>
+                        <td>  
+                            <button class="btn btn-sm btn-success" (click)="onEdit(item.id)">Edit</button>
+                            <button class="btn btn-sm btn-success" (click)="onDelete(item.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
