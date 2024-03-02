@@ -162,18 +162,6 @@ export class RegisterComponent implements OnInit{
     }
    }
 
-   updateData(){
-    debugger;
-      const currentRecord = this.employeeArray.find(m=> m.id ==this.currentId);
-      if(currentRecord != undefined){
-        const index= this.employeeArray.findIndex(m=> m.id ==this.currentId);
-        this.employeeArray.splice(index,1);
-      this.employeeArray.push(this.employeeObj);
-      localStorage.setItem('employees', JSON.stringify(this.employeeArray));
-      this.router.navigate(['/list'])
-     }
-   }
-
 
   get EmployeeId(): FormControl {
     return this.registerForm.get("employeeId") as FormControl;
